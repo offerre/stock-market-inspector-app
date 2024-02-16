@@ -1,0 +1,38 @@
+query StockSummary($stockId: Int, $id: String) {
+    stock(stockId: $stockId, id: $id) {
+        __typename
+        id
+        stockId
+        title
+        summary
+        sector {
+            id
+            name
+        }
+        industry
+        currency_sign
+        last_complete_statement_key
+        loss_chance {
+            last
+            updatedAt
+        }
+        price {
+            latest {
+                close
+                datetime
+            }
+        }
+        comparison {
+            market {
+                rank
+                member
+            }
+        }
+        updatedFinancialComplete
+        company {
+            link {
+                url
+            }
+        }
+    }
+}

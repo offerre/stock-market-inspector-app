@@ -1,0 +1,10 @@
+query JittaFilterData {
+    listJittaSectorType {
+        id
+        name
+    }
+    availableCountry {
+        code
+        name
+    }
+}

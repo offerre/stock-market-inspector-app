@@ -1,0 +1,113 @@
+query StockChartDetail($stockId: Int, $id: String) {
+    stock(stockId: $stockId, id: $id) {
+        jitta {
+            priceDiff {
+                last {
+                    id
+                    value
+                    ... on PriceDiffItem {
+                        type
+                        percent
+                    }
+                }
+                values(filterBy: { limit: 132, sort: DESC }) {
+                    id
+                    value
+                    ... on PriceDiffItem {
+                        type
+                        percent
+                    }
+                }
+            }
+            monthlyPrice {
+                last {
+                    id
+                    value
+                }
+                total
+                values(filterBy: { limit: 132, sort: DESC }) {
+                    id
+                    value
+                    year
+                    month
+                }
+            }
+            score {
+                last {
+                    value
+                    id
+                }
+                values(filterBy: { limit: 132, sort: DESC }) {
+                    id
+                    value
+                    quarter
+                    year
+                }
+            }
+            line {
+                total
+                values(filterBy: { limit: 132, sort: DESC }) {
+                    id
+                    value
+                    year
+                    month
+                }
+            }
+            factor {
+                last {
+                    value {
+                        growth {
+                            value
+                            name
+                            level
+                        }
+                        recent {
+                            value
+                            name
+                            level
+                        }
+                        financial {
+                            value
+                            name
+                            level
+                        }
+                        return {
+                            value
+                            name
+                            level
+                        }
+                        management {
+                            value
+                            name
+                            level
+                        }
+                    }
+                }
+            }
+            sign {
+                last {
+                    title
+                    type
+                    name
+                    value
+                    display {
+                        __typename
+                        ... on DisplayIPO {
+                            title
+                            value
+                        }
+                        ... on DisplayTable {
+                            title
+                            columnHead
+                            columns {
+                                name
+                                data
+                            }
+                            footer
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

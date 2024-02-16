@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">My Stock Market App</string>
+    <string name="all_category_title">ทุกหมวดธุรกิจ</string>
+    <string name="industry_title">หมวดหมู่ธุรกิจ</string>
+    <string name="sector_title">กลุ่มอุตสาหกรรม</string>
+    <string name="company_info_title">เกี่ยวกับบริษัท</string>
+    <string name="more_text">เพิ่มเติม</string>
+    <string name="company_info_header">ข้อมูลบริษัท</string>
+    <string name="jiia_signs_header">Jiia Signs</string>
+    <string name="jitta_score_text">JITTA SCORE</string>
+    <string name="jitta_factors_title">Jitta Factors</string>
+    <string name="loading_text">Loading...</string>
+    <string name="company_link_title">เว็บไซต์บริษัท</string>
+    <string name="latest_price_text">ราคาล่าสุด (%1s)</string>
+</resources>
