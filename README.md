@@ -19,6 +19,6 @@ Using to inspect a stock market in real time!
   
 ## Screenshots
 
-| Main Screen  | Detail Screen |
+| Ranking List Screen  | Stock Detail Screen |
 | ------------- | ------------- |
 | ![Screenshot_20240217_000909](https://github.com/offerre/stock-market-inspector-app/assets/26068930/0f4fde75-de7a-4004-b225-fda5b75ef189) | ![Screenshot_20240217_001429](https://github.com/offerre/stock-market-inspector-app/assets/26068930/936bad5c-9260-4ac6-a10b-4fe8c9b9b706) |
