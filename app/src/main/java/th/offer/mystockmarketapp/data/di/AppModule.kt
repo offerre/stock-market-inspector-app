@@ -11,10 +11,10 @@ import th.offer.mystockmarketapp.data.repository.JittaFilterRepository
 import th.offer.mystockmarketapp.data.repository.RankingPagingSource
 import th.offer.mystockmarketapp.data.repository.StockChartDetailRepository
 import th.offer.mystockmarketapp.data.repository.StockSummaryRepository
-import th.offer.mystockmarketapp.domain.repository.JittaFilterRepositoryInterface
-import th.offer.mystockmarketapp.domain.repository.RankingRepositoryInterface
-import th.offer.mystockmarketapp.domain.repository.StockChartDetailRepositoryInterface
-import th.offer.mystockmarketapp.domain.repository.StockSummaryRepositoryInterface
+import th.offer.mystockmarketapp.domain.repository.JittaFilterRepositoryImpl
+import th.offer.mystockmarketapp.domain.repository.RankingRepositoryImpl
+import th.offer.mystockmarketapp.domain.repository.StockChartDetailRepositoryImpl
+import th.offer.mystockmarketapp.domain.repository.StockSummaryRepositoryImpl
 import th.offer.mystockmarketapp.domain.use_case.GetChartDetailUseCase
 import th.offer.mystockmarketapp.domain.use_case.GetFilterParamsUseCase
 import th.offer.mystockmarketapp.domain.use_case.GetRankingListUseCase
@@ -37,20 +37,20 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideRankingRepositoryInterface(apolloClient: ApolloClient): RankingRepositoryInterface {
+    fun provideRankingRepositoryInterface(apolloClient: ApolloClient): RankingRepositoryImpl {
         return ApolloRankingRepository(apolloClient = apolloClient)
     }
 
     @Provides
     @Singleton
-    fun provideGetRankingDataUseCase(rankingRepositoryInterface: RankingRepositoryInterface): GetRankingListUseCase {
-        return GetRankingListUseCase(rankingRepositoryInterface = rankingRepositoryInterface)
+    fun provideGetRankingDataUseCase(rankingRepositoryImpl: RankingRepositoryImpl): GetRankingListUseCase {
+        return GetRankingListUseCase(rankingRepositoryImpl = rankingRepositoryImpl)
     }
 
     @Provides
     @Singleton
-    fun provideGetTotalStockUseCase(rankingRepositoryInterface: RankingRepositoryInterface): GetTotalStockUseCase {
-        return GetTotalStockUseCase(rankingRepositoryInterface = rankingRepositoryInterface)
+    fun provideGetTotalStockUseCase(rankingRepositoryImpl: RankingRepositoryImpl): GetTotalStockUseCase {
+        return GetTotalStockUseCase(rankingRepositoryImpl = rankingRepositoryImpl)
     }
 
     @Provides
@@ -61,37 +61,37 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideJittaFilterRepositoryInterface(apolloClient: ApolloClient): JittaFilterRepositoryInterface {
+    fun provideJittaFilterRepositoryInterface(apolloClient: ApolloClient): JittaFilterRepositoryImpl {
         return JittaFilterRepository(apolloClient = apolloClient)
     }
 
     @Provides
     @Singleton
-    fun provideGetFilterParamsUseCase(jittaFilterRepositoryInterface: JittaFilterRepositoryInterface): GetFilterParamsUseCase {
-        return GetFilterParamsUseCase(jittaFilterRepositoryInterface = jittaFilterRepositoryInterface)
+    fun provideGetFilterParamsUseCase(jittaFilterRepositoryImpl: JittaFilterRepositoryImpl): GetFilterParamsUseCase {
+        return GetFilterParamsUseCase(jittaFilterRepositoryImpl = jittaFilterRepositoryImpl)
     }
 
     @Provides
     @Singleton
-    fun provideStockSummaryRepositoryInterface(apolloClient: ApolloClient): StockSummaryRepositoryInterface {
+    fun provideStockSummaryRepositoryInterface(apolloClient: ApolloClient): StockSummaryRepositoryImpl {
         return StockSummaryRepository(apolloClient = apolloClient)
     }
 
     @Provides
     @Singleton
-    fun provideGetStockSummaryUseCase(stockSummaryRepositoryInterface: StockSummaryRepositoryInterface): GetStockSummaryUseCase {
-        return GetStockSummaryUseCase(stockSummaryRepositoryInterface = stockSummaryRepositoryInterface)
+    fun provideGetStockSummaryUseCase(stockSummaryRepositoryImpl: StockSummaryRepositoryImpl): GetStockSummaryUseCase {
+        return GetStockSummaryUseCase(stockSummaryRepositoryImpl = stockSummaryRepositoryImpl)
     }
 
     @Provides
     @Singleton
-    fun provideStockChartDetailRepositoryInterface(apolloClient: ApolloClient): StockChartDetailRepositoryInterface {
+    fun provideStockChartDetailRepositoryInterface(apolloClient: ApolloClient): StockChartDetailRepositoryImpl {
         return StockChartDetailRepository(apolloClient = apolloClient)
     }
 
     @Provides
     @Singleton
-    fun provideGetChartDetailUseCase(stockChartDetailRepositoryInterface: StockChartDetailRepositoryInterface): GetChartDetailUseCase {
-        return GetChartDetailUseCase(stockChartDetailRepositoryInterface = stockChartDetailRepositoryInterface)
+    fun provideGetChartDetailUseCase(stockChartDetailRepositoryImpl: StockChartDetailRepositoryImpl): GetChartDetailUseCase {
+        return GetChartDetailUseCase(stockChartDetailRepositoryImpl = stockChartDetailRepositoryImpl)
     }
 }

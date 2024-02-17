@@ -1,9 +1,9 @@
 package th.offer.mystockmarketapp.domain.use_case
 
-import th.offer.mystockmarketapp.domain.repository.RankingRepositoryInterface
+import th.offer.mystockmarketapp.domain.repository.RankingRepositoryImpl
 
 class GetTotalStockUseCase(
-    private val rankingRepositoryInterface: RankingRepositoryInterface
+    private val rankingRepositoryImpl: RankingRepositoryImpl
 ) {
     suspend fun execute(
         market: String,
@@ -11,7 +11,7 @@ class GetTotalStockUseCase(
         page: Int?,
         limit: Int?
     ): Int {
-        return rankingRepositoryInterface.getRankingData(
+        return rankingRepositoryImpl.getRankingData(
             market = market,
             sectors = sectors,
             page = page,

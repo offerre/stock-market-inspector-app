@@ -5,11 +5,11 @@ import com.apollographql.apollo3.api.Optional
 import th.offer.JittaRankingQuery
 import th.offer.mystockmarketapp.data.mapper.toRankingData
 import th.offer.mystockmarketapp.domain.model.JittaRankingModel
-import th.offer.mystockmarketapp.domain.repository.RankingRepositoryInterface
+import th.offer.mystockmarketapp.domain.repository.RankingRepositoryImpl
 
 class ApolloRankingRepository(
     private val apolloClient: ApolloClient,
-) : RankingRepositoryInterface {
+) : RankingRepositoryImpl {
 
     override suspend fun getRankingData(
         market: String,

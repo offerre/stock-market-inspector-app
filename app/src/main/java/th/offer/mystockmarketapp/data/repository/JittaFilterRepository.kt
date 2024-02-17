@@ -4,11 +4,11 @@ import com.apollographql.apollo3.ApolloClient
 import th.offer.JittaFilterDataQuery
 import th.offer.mystockmarketapp.data.mapper.mapper
 import th.offer.mystockmarketapp.domain.model.JittaFilterDataModel
-import th.offer.mystockmarketapp.domain.repository.JittaFilterRepositoryInterface
+import th.offer.mystockmarketapp.domain.repository.JittaFilterRepositoryImpl
 
 class JittaFilterRepository(
     private val apolloClient: ApolloClient
-) : JittaFilterRepositoryInterface {
+) : JittaFilterRepositoryImpl {
     override suspend fun getJittaFilterParams(): JittaFilterDataModel {
         return apolloClient.query(
             JittaFilterDataQuery()

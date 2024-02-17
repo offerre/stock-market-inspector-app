@@ -5,11 +5,11 @@ import com.apollographql.apollo3.api.Optional
 import th.offer.StockChartDetailQuery
 import th.offer.mystockmarketapp.data.mapper.toStockChartDetailModel
 import th.offer.mystockmarketapp.domain.model.StockChartDetailModel
-import th.offer.mystockmarketapp.domain.repository.StockChartDetailRepositoryInterface
+import th.offer.mystockmarketapp.domain.repository.StockChartDetailRepositoryImpl
 
 class StockChartDetailRepository(
     private val apolloClient: ApolloClient
-) : StockChartDetailRepositoryInterface {
+) : StockChartDetailRepositoryImpl {
     override suspend fun getChartDetail(id: String, stockId: Int): StockChartDetailModel {
         return apolloClient.query(
             StockChartDetailQuery(
